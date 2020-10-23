@@ -35,7 +35,9 @@ myAccountingSoftware.asTopLevelXml match {
 }
 ```
 
-That's it!
+([here's](https://github.com/TobiasRoland/scala-xml-encoder/blob/main/src/test/scala/codes/mostly/xml/examples/encoding/EncodingCollections.scala) this example written as a unit test)
+
+That's it! 
 
 # Usage examples
 
