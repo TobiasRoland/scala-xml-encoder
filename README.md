@@ -91,4 +91,4 @@ implicit val personEncoder: XmlEncoder[Person] = p =>
 # Limitations of this library
 - No de-coding of XML
 - Automatically deriving XML based on your case classes is out of scope for this project.
-- It's assumed your encoders are always deterministic - this won't catch any errors thrown or raised during encoding.
+- It's assumed your encoders are always deterministic - this won't catch any errors thrown or raised during encoding. So don't do that.
