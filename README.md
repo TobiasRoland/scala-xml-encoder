@@ -30,7 +30,7 @@ And produce XML:
 
 ```scala
 myAccountingSoftware.asTopLevelXml match {
-    Left(error: String)         => TerribleAccountingSoftware(...) // in case you goofed and didn't produce EXACTLY one xml element
+    Left(error: String)         => ??? // in case you goofed and didn't produce EXACTLY one xml element
     Right(elem: scala.xml.Elem) => ??? // here's your valid XML element
 }
 ```
