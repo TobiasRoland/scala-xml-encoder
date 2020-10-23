@@ -14,10 +14,10 @@ Define your encoders:
 case class Employee(name: String, hasProvidedTaxCode: Boolean)
 case class TerribleAccountingSoftware(employees: Option[List[Set[Seq[Option[List[Employee]]]]]]) // Hopefully a contrived example
 
-implicit val developerEncoder: XmlEncoder[Employee] = developer =>
+implicit val developerEncoder: XmlEncoder[Employee] = employee =>
   <emp>
-    <name>{developer.name}</name>
-    <isPayingTax>{developer.hasProvidedTaxCode.toString}</isPayingTax>
+    <name>{employee.name}</name>
+    <isPayingTax>{employee.hasProvidedTaxCode.toString}</isPayingTax>
   </emp>
 
 implicit val accountingSoftwareEncoder: XmlEncoder[TerribleAccountingSoftware] = software =>
