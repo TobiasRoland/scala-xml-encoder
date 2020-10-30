@@ -1,7 +1,7 @@
-# Xml Sugar: A scala-xml Encoder 
+# Scala Xml Encoder - XmlSugar for encoding XML in scala 
 A tiny micro-library for encoding [scala-xml](https://github.com/scala/scala-xml) with zero dependencies (outside of scala-xml itself)
 
-See [blog post](https://mostly.codes) //TODO
+See [blog post](https://mostly.codes) //TODO BEFORE PUBLISHING ARTIFACTS
 
 # How do I use this to produce XML
 Import it
