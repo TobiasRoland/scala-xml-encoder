@@ -1,4 +1,4 @@
-# Scala Xml Encoder - XmlSugar for encoding XML in scala 
+# Scala Xml Encoder: Making it more fun to encode XML with scala 
 A tiny micro-library for encoding [scala-xml](https://github.com/scala/scala-xml) with zero dependencies (outside of scala-xml itself)
 
 See [blog post](https://mostly.codes) //TODO BEFORE PUBLISHING ARTIFACTS
@@ -54,16 +54,15 @@ That's it!
 * [Adding an optional attribute to an XML Element](src/test/scala/codes/mostly/xml/examples/attribute/OptionalNodeAttributes.scala)
 
 # What's the design idea here
-To make writing XML more fun and less annoying. It's using implicit encoders which
+To make writing XML more fun and less annoying by using implicit encoders which
 is inspired by `circe`, but a little simpler and a lot less grand in scope.
 
-The general idea is:
+The general concepts are:
 
 1. Put implicit XML encoders for your models into scope
 2. Once you have that, define your XML using standard scala-xml syntax `.asXml` to encode the child types.
 3. Empty collections means no XML elements are produced
-  
-You can see the intended usage in this example
+
 
 # I use Cats, are there encoders for [name_of_thing_here]
 I like cats too, but I didn't want to add more dependencies to this micro library.

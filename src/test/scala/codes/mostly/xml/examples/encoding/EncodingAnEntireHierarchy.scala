@@ -18,7 +18,7 @@ class EncodingAnEntireHierarchy extends AnyWordSpecLike with XmlMatchers with Ma
   case class Hobby(title: String, expensive: Boolean)
   case class QualifiedName(honorificPrefix: String, name: String)
   case class Person(name: QualifiedName, occupation: Option[Job], pets: List[Pet], hobby: Option[Hobby])
-  case class People(individuals: Set[Person])
+  case class People(individuals: List[Person])
 
 
   "Encoding a full hierarchy with common data structures " +
@@ -70,30 +70,20 @@ class EncodingAnEntireHierarchy extends AnyWordSpecLike with XmlMatchers with Ma
       hobby = Some(Hobby("Singing shanties", expensive = false))
     )
 
-    People(Set(person, person2, person3, developer, pirate)).asTopLevelXml match {
+    People(List(person, person2, person3, developer, pirate)).asTopLevelXml match {
       case Left(err) => fail(err)
       case Right(xml) => xml should beLike(
         <people count="5">
           <person>
-            <name>Captain Roland</name>
-            <hobby>
-              <hobbyName>Singing shanties</hobbyName>
-              <pricey>false</pricey>
-            </hobby>
-            <occupation title="Pirate" allowsPets="true"/>
-            <pets>
-              <pet>
-                <nickname>Pops</nickname>
-                <bird/>
-              </pet>
-            </pets>
-          </person>
-          <person>
-            <name>Mx. Otbias</name>
+            <name>Mr. Tobias</name>
             <pets></pets>
           </person>
           <person>
             <name>Rev. Saibot</name>
+            <pets></pets>
+          </person>
+          <person>
+            <name>Mx. Otbias</name>
             <pets></pets>
           </person>
           <person>
@@ -115,8 +105,18 @@ class EncodingAnEntireHierarchy extends AnyWordSpecLike with XmlMatchers with Ma
             </pets>
           </person>
           <person>
-            <name>Mr. Tobias</name>
-            <pets></pets>
+            <name>Captain Roland</name>
+            <hobby>
+              <hobbyName>Singing shanties</hobbyName>
+              <pricey>false</pricey>
+            </hobby>
+            <occupation title="Pirate" allowsPets="true"/>
+            <pets>
+              <pet>
+                <nickname>Pops</nickname>
+                <bird/>
+              </pet>
+            </pets>
           </person>
         </people>
       )
