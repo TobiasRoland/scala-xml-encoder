@@ -14,4 +14,4 @@ inThisBuild(List(
 
 
 libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.3.1"
-libraryDependencies += "org.scalatest"          %% "scalatest" % "3.2.18" % Test
+libraryDependencies += "org.scalatest"          %% "scalatest" % "3.2.19" % Test
